@@ -12,8 +12,8 @@ This talk will break down the most popular dark patterns using real life example
 - [Slides](https://bit.ly/dark-ux-patterns)
 
 ## Speaker
-- Vitaliy Matiyash
-  - [LinkedIn](www.linkedin.com/in/vitaliymatiyash/)
-  - [Twitter](twitter.com/VitaliyMatiyash)
-  - [Github](https://github.com/vitaluha)
-  - [Personal Website](www.vitaliymatiyash.com)
+Vitaliy Matiyash
+- [LinkedIn](www.linkedin.com/in/vitaliymatiyash/)
+- [Twitter](twitter.com/VitaliyMatiyash)
+- [Github](https://github.com/vitaluha)
+- [Personal Website](www.vitaliymatiyash.com)

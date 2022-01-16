@@ -2,7 +2,7 @@
 
 ## Where Jane has Gone?
 
-## Presenters
+## Presenter
 * Karen M Linden
 * linkedin https://www.linkedin.com/in/karenmlinden/
 * Email karen.m.linden@gmail.com

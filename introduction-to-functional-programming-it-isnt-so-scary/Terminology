@@ -1,0 +1,48 @@
+TERMINOLOGY
+
+
+ADT
+==================
+monads.books.foreach{
+  case Book(title, pageCount, _) if pageCount > 500 => println(s"$title is a big book!")
+  case Book(title, _, _) => println(s"$title is not so big.")
+}
+
+
+
+PARTIAL FUNCTION
+===================
+monads.books.collect{
+  case Book(_, _, Author("Jane", _)) => "Jane"
+}
+
+monads.books.map{
+  case Book(_, _, Author("Jane", _)) => "Jane"
+}
+
+
+CURRYING
+===================
+def add(a: Int, b: Int) = a + b
+add(3,4)
+def addWithCurrying(a: Int) = (b: Int) => a + b
+val curriedAdd = addWithCurrying(3)
+curriedAdd(4)
+addWithCurrying(3)(4)
+
+//Benefit = wrapper code
+import java.io._
+def using[T](reader: BufferedReader)(userFunction: BufferedReader => T) = 
+  try{
+    userFunction(reader)
+  } finally {
+    reader.close()
+  }
+
+using(new BufferedReader(new FileReader("helloCodeMash.txt"))){reader => 
+  var currentLine = reader.readLine
+  while(currentLine != null){
+    println(currentLine)
+    currentLine = reader.readLine
+  }
+}

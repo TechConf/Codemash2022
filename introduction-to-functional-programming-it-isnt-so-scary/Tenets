@@ -1,0 +1,36 @@
+TENETS
+
+
+First Class Functions
+======================
+val myAddingFunction = (a: Int, b: Int) => a + b
+myAddingFunction(1, 2)
+
+
+Higher Order Functions
+======================
+def doStuffWithThisThing[T,S](stuff: T => S, thing: T) = {
+  stuff(thing)
+}
+val intToStringConverter= (a: Int) => a.toString()
+doStuffWithThisThing[Int, String](intToStringConverter, myAddingFunction(1, 2))
+
+
+
+Referential Transparency
+=======================
+def add(a:Int, b: Int) = a + b
+val output = add(1, add(2, 3))
+val sameOutput = add(1, 5)
+
+
+Discliplined State
+===================
+var counter = 0 //Could be a mutable reference passed into f(n)
+def addWithoutReferentialTransparency(a: Int, b: Int) =  {
+  val addedValue = a + b + counter
+  counter = counter + 1
+  addedValue
+}
+addWithoutReferentialTransparency(1, 2)
+addWithoutReferentialTransparency(1, 2)

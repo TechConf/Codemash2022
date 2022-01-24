@@ -1,0 +1,57 @@
+MONAD
+
+
+NULL
+==================
+val myStr: String = null
+myStr.toLowerCase
+
+
+val myStrOption: Option[String] = None
+myStrOption.toLowerCase
+myStrOption.map(_.toLowerCase)
+val myStrOption = Some("ABC")
+myStrOption.map(_.toLowerCase)
+
+
+
+FUTURE
+===================
+//Threads and thread management....too much for talk
+
+import scala.concurrent.Future
+implicit val ec: scala.concurrent.ExecutionContext = scala.concurrent.ExecutionContext.global
+val simpleFuture = Future{1}
+simpleFuture
+val delayedFuture = Future {
+  Thread.sleep(10000)
+  println("I am done")
+  1
+}
+println("Do stuff")
+
+
+LIST
+====================
+cd Development/FunctionalCodemash
+sbt console
+val monads = new Monads
+monads.books.foreach(println)
+
+import scala.collection.mutable
+val filteredBooks = mutable.ListBuffer[Book]()
+for(book <- monads.books) {
+  if(book.numberOfPages > 500)
+    filteredBooks += book
+}
+for(book <- filteredBooks) println(book)
+
+monads.books.filter(book => book.numberOfPages > 500).foreach(println)
+
+
+BONUS FUNCTIONS
+====================
+(1 to 10).reduce(_+_)
+monads.books.foldLeft(0)((totalPages, book) => totalPages + book.numberOfPages)
+monads.books.map(_.author)
+

@@ -1,0 +1,19 @@
+BENEFITS
+
+
+Composition
+===========================
+def add1(a: Int) = a + 1
+def squared(a: Int) = a * a
+val firstFive = 1 to 5
+
+for(x <- firstFive) {
+  println(squared(add1(x)))
+}
+
+
+firstFive.map(add1).map(squared).foreach(println)
+
+
+
+
